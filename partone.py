@@ -4,6 +4,7 @@ db = Database('postgres', 'postgres://localhost:5432/user-database')
 
 class User(db.Entity):
     username = Required(str)
+    email = Required(str)
     password = Required(str)
     age = Required(int)
     location = Required(str)
