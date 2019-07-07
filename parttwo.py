@@ -1,7 +1,7 @@
 import unittest
-from flask import Flask
-from flask_testing import TestCase
+from unittest import TestCase
 from pony.orm import Database, db_session
+from flask import Flask
 from partone import define_entity, create_entities
 
 class TestFunc(TestCase):
@@ -21,6 +21,7 @@ class TestFunc(TestCase):
 
     @db_session
     def test_create_entities(self):
+        # pylint: disable=E1101
         user = self.db.User.get(username="Josh01")
         self.assertEqual(user.location, 'London')
 
