@@ -4,15 +4,13 @@ from pony.orm import Database
 from partone import define_entity, create_entities
 
 class TestApp(TestCase):
-    PONY_DB_PARAMS = dict(provider='sqlite', filename='/tmp/test.db')
-
     def create_app(self):
         app = Flask(__name__)
         app.config['TESTING'] = True
         return app
 
     def setUp(self):
-        self.db = Database('sqlite', '/tmp/test.db')
+        self.db = Database('sqlite', 'sqlite://tmp/test.db', create_db=True)
         define_entity(self.db)
         self.db.generate_mapping(create_tables=True)
         create_entities(self.db)
