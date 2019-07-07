@@ -1,8 +1,7 @@
 from pony.orm import Database, db_session, Required
 
-# db = Database('postgres', 'postgres://localhost:5432/user-database')
-
 def define_entity(db):
+    # pylint: disable=W0612
     class User(db.Entity):
         username = Required(str)
         email = Required(str)
@@ -26,10 +25,6 @@ def create_entities(database):
 # first - define_database must be called with the database parameters as args or kwargs
 # then - pass that database to create_entities as the argument
 
-# ex.
-# database = define_database('postgres', 'postgres://localhost:5432/user-database')
-# create_entities(database)
-
-
-# possibly call define_database from create_entities, passing database parameters as args and kwargs ...
-# to create_entities and then passing them to define_database before seeding data
+# ex. uncomment the below and run `python partone.py` in the terminal
+trial_db = define_database('postgres', 'postgres://localhost:5432/user-database')
+create_entities(trial_db)
