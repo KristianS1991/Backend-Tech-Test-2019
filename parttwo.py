@@ -1,3 +1,4 @@
+import unittest
 from flask import Flask
 from flask_testing import TestCase
 from pony.orm import Database, db_session
@@ -10,15 +11,18 @@ class TestFunc(TestCase):
         return app
 
     def setUp(self):
-        self.db = Database('sqlite', 'sqlite://tmp/test.db', create_db=True)
+        self.db = Database(provider='sqlite', filename=':memory:')
         define_entity(self.db)
         self.db.generate_mapping(create_tables=True)
         create_entities(self.db)
 
     def tearDown(self):
-        db.drop_all_tables(with_all_data=True)
+        self.db.drop_all_tables(with_all_data=True)
 
     @db_session
     def test_create_entities(self):
-        #logic to test function - get something from database and compare w/ known values
-        #self.assertEqual(value from db, known value)
+        user = self.db.User.get(username="Josh01")
+        self.assertEqual(user.location, 'London')
+
+if __name__ == '__main__':
+    unittest.main()
