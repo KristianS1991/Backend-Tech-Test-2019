@@ -21,10 +21,6 @@ def create_entities(database):
     database.User(username="Sarah02", email="sarah@gmail.com", password="pass", age=34, location='New York')
     database.User(username="Harris03", email="harris@gmail.com", password="pass", age=45, location='Toronto')
 
-# To Seed Data:
-# first - define_database must be called with the database parameters as args or kwargs
-# then - pass that database to create_entities as the argument
-
 # ex. uncomment the below and run `python part_one.py` in the terminal
 trial_db = define_database('postgres', 'postgres://localhost:5432/user-database')
 create_entities(trial_db)
