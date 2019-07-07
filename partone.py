@@ -10,8 +10,8 @@ def define_entity(db):
         age = Required(int)
         location = Required(str)
 
-def define_database(**db_params):
-    db = Database(**db_params)
+def define_database(*db_params):
+    db = Database(*db_params)
     define_entity(db)
     db.generate_mapping(create_tables=True)
     return db

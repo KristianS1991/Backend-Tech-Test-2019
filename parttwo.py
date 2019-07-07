@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_testing import TestCase
-from partone import define_database
-from partone import create_entities
+from pony.orm import Database
+from partone import define_entity, create_entities
 
 class TestApp(TestCase):
     PONY_DB_PARAMS = dict(provider='sqlite', filename='/tmp/test.db')
@@ -12,5 +12,10 @@ class TestApp(TestCase):
         return app
 
     def setUp(self):
-        self.db = define_database(**self.PONY_DB_PARAMS)
+        self.db = Database('sqlite', '/tmp/test.db')
+        define_entity(self.db)
+        self.db.generate_mapping(create_tables=True)
         create_entities(self.db)
+
+    def tearDown(self):
+        db.drop_all_tables(with_all_data=True)
