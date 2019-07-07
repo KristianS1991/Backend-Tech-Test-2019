@@ -25,6 +25,6 @@ def create_entities(database):
 # first - define_database must be called with the database parameters as args or kwargs
 # then - pass that database to create_entities as the argument
 
-# ex. uncomment the below and run `python partone.py` in the terminal
+# ex. uncomment the below and run `python part_one.py` in the terminal
 trial_db = define_database('postgres', 'postgres://localhost:5432/user-database')
 create_entities(trial_db)

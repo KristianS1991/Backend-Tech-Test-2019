@@ -1,7 +1,7 @@
 import unittest
 from unittest import TestCase
 from pony.orm import Database, db_session
-from partone import define_entity, create_entities
+from part_one import define_entity, create_entities
 
 class TestFunc(TestCase):
     def setUp(self):
@@ -21,3 +21,5 @@ class TestFunc(TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+# to run test, run `python part_two.py` in the terminal
