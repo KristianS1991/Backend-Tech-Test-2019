@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_testing import TestCase
-from pony.orm import Database
+from pony.orm import Database, db_session
 from partone import define_entity, create_entities
 
 class TestApp(TestCase):
@@ -17,3 +17,8 @@ class TestApp(TestCase):
 
     def tearDown(self):
         db.drop_all_tables(with_all_data=True)
+
+    @db_session
+    def test_create_entities(self):
+        #logic to test function - get something from database and compare w/ known values
+        #self.assertEqual(value from db, known value)
