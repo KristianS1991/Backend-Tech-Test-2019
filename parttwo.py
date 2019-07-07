@@ -1,15 +1,9 @@
 import unittest
 from unittest import TestCase
 from pony.orm import Database, db_session
-from flask import Flask
 from partone import define_entity, create_entities
 
 class TestFunc(TestCase):
-    def create_app(self):
-        app = Flask(__name__)
-        app.config['TESTING'] = True
-        return app
-
     def setUp(self):
         self.db = Database(provider='sqlite', filename=':memory:')
         define_entity(self.db)
