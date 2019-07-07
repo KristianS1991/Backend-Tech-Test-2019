@@ -12,7 +12,7 @@
 1. Clone or download the repository.
 2. Run `pip install pony psycopg2-binary` in the terminal, within the repository folder.
 #### For Part One
-2. In the terminal, run the Bash command `createdb user-database` to create the SQL database.
+2. In the terminal, run the Bash command `createdb user-database` to create the database.
 3. Run `python part_one.py` within the repository folder in the terminal, this will seed the database with the set of user data.
 #### For Part Two
 4. Run `python part_two.py` within the repository folder in the terminal, this will run the unit test on the function from `part_one.py`.
@@ -63,4 +63,5 @@ At first, I tried using the `testing.postgresql` package to set up the unit test
 ## Part Three
 ###  Create a client/server application to allow discovery on a network.
 ####  a. A simple server that broadcasts it's existence with a set of data (i.e. ID, MAC or IP)
+
 ####  b. A client that searches for the server and displays in a terminal the data received.
