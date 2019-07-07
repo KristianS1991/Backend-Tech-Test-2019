@@ -61,7 +61,11 @@ At first, I tried using the `testing.postgresql` package to set up the unit test
 ![Part Two in Terminal](https://i.imgur.com/LQJkuex.png)
 
 ## Part Three
-###  Create a client/server application to allow discovery on a network.
-####  a. A simple server that broadcasts it's existence with a set of data (i.e. ID, MAC or IP)
+### Create a client/server application to allow discovery on a network.
+Please accept this as my best attempt to explain how I would approach solving this problem. After doing some research, I stumbled upon a technique called `UDP broadcast` that appears to apply to this scenario. `UDP` stands for *User Datagram Protocol*. It is an alternative communications protocol to `TCP`, or *Transmission Control Protocol*. Both of these communications protocols run on the *Internet Protocol*, `IP`. `UDP` sends datagrams which contain information sufficient to be routed from the source to the destination computer.
 
-####  b. A client that searches for the server and displays in a terminal the data received.
+`UDP broadcast` is a technique that allows sending a `UDP` datagram from a single source to all computers on a local area network (`LAN`). To send the `UDP` datagram to all computers on a local area network, the `UDP` datagram needs to be sent to the **broadcast address**.
+
+#### a. A simple server that broadcasts it's existence with a set of data (i.e. ID, MAC or IP)
+
+#### b. A client that searches for the server and displays in a terminal the data received.
