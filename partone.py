@@ -22,4 +22,4 @@ def create_entities(database):
     database.User(username="Sarah02", email="sarah@gmail.com", password="pass", age=34, location='New York')
     database.User(username="Harris03", email="harris@gmail.com", password="pass", age=45, location='Toronto')
 
-# create_entity(db)
+# create_entities(db)
