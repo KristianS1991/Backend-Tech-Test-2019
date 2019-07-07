@@ -43,7 +43,7 @@ When I ran `part_one.py` in the terminal, it successfully seeded the database (c
 ### Write a unit test to verify the function works.
 For part two, I needed to do some research on the best ways to unit test a function that writes to a database. I discovered a couple different ways of doing this, all revolving around the idea of generating a temporary, or "mock" database, then using the function of interest to seed that database. Tests could then be written to get data from the temporary database and determine if that data is equal to the expected value.
 
-#### Choosing A Testing Framework
+#### Choosing a Testing Framework
 At first, I tried using the `testing.postgresql` package to set up the unit test for a `postgresql` instance. It follows similar methodology to most packages for unit testing, but it appeared to be a bit more complex for this application, as it required setting up a `PostgreSQL` server and it was meant to be used with plain `SQL` statements rather than `PonyORM`. I decided against this and continued searching for a more straightforward package. I then stumbled across `flask-testing`, the testing extension for the `Flask` framework. This package seemed to be more flexible and worked in conjunction with `PonyORM`. I wrote most of what ended up being the final draft of part two with this until I realized that I didn't need a `Flask` application and I could just use the `unittest` framework.
 
 #### Part Two Process
