@@ -47,7 +47,7 @@ For part two, I needed to do some research on the best ways to unit test a funct
 At first, I tried using the `testing.postgresql` package to set up the unit test for a `postgresql` instance. It follows similar methodology to most packages for unit testing, but it appeared to be a bit more complex for this application, as it required setting up a `PostgreSQL` server and it was meant to be used with plain `SQL` statements rather than `PonyORM`. I decided against this and continued searching for a more straightforward package. I then stumbled across `flask-testing`, the testing extension for the `Flask` framework. This package seemed to be more flexible and worked in conjunction with `PonyORM`. I wrote most of what ended up being the final draft of part two with this until I realized that I didn't need a `Flask` application and I could just use the `unittest` framework.
 
 #### Part Two Process
-1. Import the the `unittest` framework, the necessary functions from the `PonyORM` library, and the relevant functions from `part_one.py`.
+1. Import the `unittest` framework, the necessary functions from the `PonyORM` library, and the relevant functions from `part_one.py`.
 2. Create a `TestFunc` class as a subclass of the `unittest.TestCase` base class.
 3. Define a `setUp` method to set up the temporary database (using sqlite, storing in memory) and call the `create_entities` function, passing the temporary database as an argument.
 4. Define a `tearDown` method to delete the temporary database after testing.
