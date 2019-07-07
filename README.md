@@ -55,7 +55,7 @@ At first, I tried using the `testing.postgresql` package to set up the unit test
 6. Add the conditional statement at the end of script to run unit tests when the script is ran.
 
 #### Part Two
-![Part Two](https://i.imgur.com/a1SzNjP.png)
+![Part Two](https://i.imgur.com/RHZaMD1.png)
 
 #### Success!
 ![Part Two in Terminal](https://i.imgur.com/LQJkuex.png)
