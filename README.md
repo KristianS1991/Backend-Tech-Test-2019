@@ -4,23 +4,24 @@
 * Python
 * SQL, PostgreSQL, SQLite
 * PonyORM
-* Unittest
+* unittest
 * PIP
 * GitHub
 
 ## Installation
 1. Clone or download the repository.
 2. Run `pip install pony psycopg2-binary` in the terminal, within the repository folder.
-##### For Part One:
+##### For Part One
 2. In the terminal, run the Bash command `createdb user-database` to create the SQL database.
 3. Run `python part_one.py` within the repository folder in the terminal, this will seed the database with the set of user data.
-##### For Part Two:
+##### For Part Two
 4. Run `python part_two.py` within the repository folder in the terminal, this will run the unit test on the function from `part_one.py`.
 
 ## Part One
 ### Write a function to take a fixed set of data and insert it into a database.
 To complete this task, I decided to write the script in Python, using the object relational mapping library PonyORM, to execute the necessary SQL statements to write to an SQL database. I used the PIP package manager to install the required modules. The steps below summarize the process I took to write the first draft of this script.
-##### First Draft Process:
+
+##### First Draft Process
 1. Import the necessary functions from the PonyORM library.
 2. Create the database object `db`, and bind this object to the `user-database`.
 3. Create a `User` class to model the user data to be stored in the database.
@@ -28,5 +29,12 @@ To complete this task, I decided to write the script in Python, using the object
 5. Define a function, `create_entities` which implements the `User` model to store a set of user data into the `user-database`.
 6. Apply the decorator function, `db_session`, to the `create_entities` function to open a session with the user-database before the function logic is executed, and then close that session.
 7. Invoke the `create_entities` function.
+
 ##### First Draft
 ![First Draft Part One](https://i.imgur.com/g5PdQg0.png)
+
+##### Refactoring
+When I ran `part_one.py` in the terminal, it successfully seeded the database (checked this manually using `psql`). However, I came to realize later on that the way I wrote this script made it difficult when it came to testing in part two. Since the database object and database being seeded were hardcoded, there was no way to unit test part one against a temporary database. Therefore, I had to refactor part one to be more versatile and allow any database object to be defined. This database object was then passed in as an argument to the `create_entities` function to be seeded.
+
+##### Final Draft
+![Final Draft Part One](https://i.imgur.com/vKdO7oF.png)
