@@ -1,9 +1,8 @@
 import unittest
-from unittest import TestCase
 from pony.orm import Database, db_session
 from part_one import define_entity, create_entities
 
-class TestFunc(TestCase):
+class TestFunc(unittest.TestCase):
     def setUp(self):
         self.db = Database(provider='sqlite', filename=':memory:')
         define_entity(self.db)
