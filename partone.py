@@ -10,8 +10,8 @@ def define_entity(db):
         age = Required(int)
         location = Required(str)
 
-def define_database(*db_params):
-    db = Database(*db_params)
+def define_database(*db_args, **db_kwargs):
+    db = Database(*db_args, **db_kwargs)
     define_entity(db)
     db.generate_mapping(create_tables=True)
     return db
@@ -22,4 +22,14 @@ def create_entities(database):
     database.User(username="Sarah02", email="sarah@gmail.com", password="pass", age=34, location='New York')
     database.User(username="Harris03", email="harris@gmail.com", password="pass", age=45, location='Toronto')
 
-# create_entities(db)
+# To Seed Data:
+# first - define_database must be called with the database parameters as args or kwargs
+# then - pass that database to create_entities as the argument
+
+# ex.
+# database = define_database('postgres', 'postgres://localhost:5432/user-database')
+# create_entities(database)
+
+
+# possibly call define_database from create_entities, passing database parameters as args and kwargs ...
+# to create_entities and then passing them to define_database before seeding data
