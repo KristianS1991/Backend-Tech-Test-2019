@@ -62,10 +62,26 @@ At first, I tried using the `testing.postgresql` package to set up the unit test
 
 ## Part Three
 ### Create a client/server application to allow discovery on a network.
-Please accept this as my best attempt to explain how I would approach solving this problem. After doing some research, I stumbled upon a technique called `UDP broadcast` that appears to apply to this scenario. `UDP` stands for *User Datagram Protocol*. It is an alternative communications protocol to `TCP`, or *Transmission Control Protocol*. Both of these communications protocols run on the *Internet Protocol*, `IP`. `UDP` sends datagrams which contain information sufficient to be routed from the source to the destination computer.
+Please accept this as my best attempt to explain how I would approach solving this problem. After doing some research, I stumbled upon a technique called `UDP broadcast` that appears to apply to this scenario. `UDP` stands for *User Datagram Protocol*. It is an alternative communications protocol to `TCP`, or *Transmission Control Protocol*. Both of these communications protocols run on top of the *Internet Protocol*, `IP`. `UDP` sends datagrams which contain information sufficient to be routed from the source to the destination computer.
 
-`UDP broadcast` is a technique that allows sending a `UDP` datagram from a single source to all computers on a local area network (`LAN`). To send the `UDP` datagram to all computers on a local area network, the `UDP` datagram needs to be sent to the **broadcast address**.
+`UDP broadcast` is a technique that allows sending a `UDP` datagram from a single source to all computers on a local area network, `LAN`. To send the `UDP` datagram to all computers on a local area network, the `UDP` datagram needs to be sent to the broadcast address. The broadcast address is either the universal broadcast address, `255.255.255.255`, or the highest address in the local subnetwork. The broadcast address can be calculated using the IP address and the subnet mask.
 
 #### a. A simple server that broadcasts it's existence with a set of data (i.e. ID, MAC or IP)
+According to resources online, it seems that C# is a good language to use for this application.
+
+##### Process Breakdown
+1. Create a server.
+2. Create a set of data.
+3. Send an http request, with the set of data, to the broadcast address. This will then forward the data to   every computer on that local area network.
 
 #### b. A client that searches for the server and displays in a terminal the data received.
+1. Create a client.
+2. Set the client up to listen on a specific port for messages from the network.
+3. Once the message is received, connect to the broadcast address.
+4. Send an http request to the broadcast address requesting the data.
+
+#### Useful Documentation for Part Three
+* Stack Overflow, Network Discovery via UDP Broadcast: https://bit.ly/2NBKexm
+* User Datagram Protocol Info: https://bit.ly/2RskbGI
+* UDP Broadcast Explained: https://bit.ly/2JucvRk
+* How to Calculate Broadcast Address: https://bit.ly/2XxaBJq
