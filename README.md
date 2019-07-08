@@ -80,6 +80,7 @@ According to resources online, it seems that C# is a good language to use for th
 2. Set the client up to listen on a specific port for messages from the network.
 3. Once the message is received, connect to the broadcast address.
 4. Send an http request to the broadcast address requesting the data.
+5. Log the data in the terminal after receiving the response.
 
 #### Useful Documentation for Part Three
 * Stack Overflow, Network Discovery via UDP Broadcast: https://bit.ly/2NBKexm
