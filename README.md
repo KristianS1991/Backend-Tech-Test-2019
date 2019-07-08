@@ -66,7 +66,7 @@ Please accept this as my best attempt to explain how I would approach solving th
 
 `UDP broadcast` is a technique that allows sending a `UDP` datagram from a single source to all computers on a local area network, `LAN`. To send the `UDP` datagram to all computers on a local area network, the `UDP` datagram needs to be sent to the broadcast address. The broadcast address is either the universal broadcast address, `255.255.255.255`, or the highest address in the local subnetwork. The broadcast address can be calculated using the IP address and the subnet mask.
 
-#### a. A simple server that broadcasts it's existence with a set of data (i.e. ID, MAC or IP)
+### a. A simple server that broadcasts it's existence with a set of data (i.e. ID, MAC or IP)
 According to resources online, it seems that C# is a good language to use for this application.
 
 #### Process Breakdown
@@ -74,7 +74,7 @@ According to resources online, it seems that C# is a good language to use for th
 2. Create a set of data.
 3. Send an http request, with the set of data, to the broadcast address. This will then forward the data to   every computer on that local area network.
 
-#### b. A client that searches for the server and displays in a terminal the data received.
+### b. A client that searches for the server and displays in a terminal the data received.
 #### Process Breakdown
 1. Create a client.
 2. Set the client up to listen on a specific port for messages from the network.
