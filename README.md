@@ -26,8 +26,8 @@ To complete this task, I decided to write the script in Python, using the object
 2. Create the database object `db`, and bind this object to the `user-database`.
 3. Create a `User` class to model the user data to be stored in the database.
 4. Generate mapping on the database object, this shows the database the format to expect for the entities.
-5. Define a function, `create_entities` which implements the `User` model to store a set of user data into the `user-database`.
-6. Apply the decorator function, `db_session`, to the `create_entities` function to open a session with the user-database before the function logic is executed, and then close that session.
+5. Define a function, `create_entity` which implements the `User` model to store a set of user data into the `user-database`.
+6. Apply the decorator function, `db_session`, to the `create_entity` function to open a session with the user-database before the function logic is executed, and then close that session.
 7. Invoke the `create_entity` function.
 
 #### First Draft
