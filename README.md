@@ -34,10 +34,10 @@ To complete this task, I decided to write the script in Python, using the object
 ![First Draft Part One](https://i.imgur.com/g5PdQg0.png)
 
 #### Refactoring
-When I ran `part_one.py` in the terminal, it successfully seeded the database (checked this manually using `psql`). However, I came to realize later on that the way I wrote this script made it difficult when it came to testing in part two. Since the database being seeded was hardcoded, there was no way to unit test the `create_entities` function against a temporary database. Therefore, I had to refactor part one to be more versatile by defining a function to allow any database object to be created by passing either positional arguments or keyword arguments, as the database set-up parameters. This database object was then passed in as an argument to the `create_entities` function to be seeded.
+When I ran `part_one.py` in the terminal, it successfully seeded the database (checked this manually using `psql`). However, I came to realize later on that the way I wrote this script made it difficult when it came to testing in part two. Since the database being seeded was hardcoded, there was no way to unit test the `create_entities` function against a temporary database. Therefore, I had to refactor part one to be more versatile by defining a function to allow any database object to be created by passing either positional arguments or keyword arguments, as the database set-up parameters. This database object was then passed in as an argument to the `create_entities` function to be seeded. I then updated the `create_entities` function so that it takes the set of data as a second argument and uses a `for in` loop to store the data in the database.
 
 #### Final Draft
-![Final Draft Part One](https://i.imgur.com/WvOGkHQ.png)
+![Final Draft Part One](https://i.imgur.com/JVuS9Vd.png)
 
 ## Part Two
 ### Write a unit test to verify the function works.
@@ -55,7 +55,7 @@ At first, I tried using the `testing.postgresql` package to set up the unit test
 6. Add the conditional statement at the end of script to run unit tests when the script is executed in the terminal.
 
 #### Part Two
-![Part Two](https://i.imgur.com/RHZaMD1.png)
+![Part Two](https://i.imgur.com/5A2K4HB.png)
 
 #### Tested in Command Line
 ![Part Two in Terminal](https://i.imgur.com/LQJkuex.png)
