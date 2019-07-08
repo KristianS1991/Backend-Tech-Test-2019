@@ -34,7 +34,7 @@ To complete this task, I decided to write the script in Python, using the object
 ![First Draft Part One](https://i.imgur.com/g5PdQg0.png)
 
 #### Refactoring
-When I ran `part_one.py` in the terminal, it successfully seeded the database (checked this manually using `psql`). However, I came to realize later on that the way I wrote this script made it difficult when it came to testing in part two. Since the database being seeded was hardcoded, there was no way to unit test the `create_entities` function against a temporary database. Therefore, I had to refactor part one to be more versatile and allow any database object to be defined using either positional arguments or keyword arguments, as the database set-up parameters. This database object was then passed in as an argument to the `create_entities` function to be seeded.
+When I ran `part_one.py` in the terminal, it successfully seeded the database (checked this manually using `psql`). However, I came to realize later on that the way I wrote this script made it difficult when it came to testing in part two. Since the database being seeded was hardcoded, there was no way to unit test the `create_entities` function against a temporary database. Therefore, I had to refactor part one to be more versatile by defining a function to allow any database object to be created by passing either positional arguments or keyword arguments, as the database set-up parameters. This database object was then passed in as an argument to the `create_entities` function to be seeded.
 
 #### Final Draft
 ![Final Draft Part One](https://i.imgur.com/WvOGkHQ.png)
