@@ -28,7 +28,7 @@ To complete this task, I decided to write the script in Python, using the object
 4. Generate mapping on the database object, this shows the database the format to expect for the entities.
 5. Define a function, `create_entities` which implements the `User` model to store a set of user data into the `user-database`.
 6. Apply the decorator function, `db_session`, to the `create_entities` function to open a session with the user-database before the function logic is executed, and then close that session.
-7. Invoke the `create_entities` function.
+7. Invoke the `create_entity` function.
 
 #### First Draft
 ![First Draft Part One](https://i.imgur.com/g5PdQg0.png)
@@ -52,7 +52,7 @@ At first, I tried using the `testing.postgresql` package to set up the unit test
 3. Define a `setUp` method to set up the temporary database (using sqlite, storing in memory) and call the `create_entities` function, passing the temporary database as an argument.
 4. Define a `tearDown` method to delete the temporary database after testing.
 5. Define a `test_create_entities` method to get data from the temporary database and use the `assertEqual` method to check if this data matches the expected value.
-6. Add the conditional statement at the end of script to run unit tests when the script is ran.
+6. Add the conditional statement at the end of script to run unit tests when the script is executed in the terminal.
 
 #### Part Two
 ![Part Two](https://i.imgur.com/RHZaMD1.png)
