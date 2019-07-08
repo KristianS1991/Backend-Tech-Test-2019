@@ -72,7 +72,8 @@ According to resources online, it seems that C# is a good language to use for th
 #### Process Breakdown
 1. Create a server.
 2. Create a set of data.
-3. Send an http request, with the set of data, to the broadcast address. This will then forward the data to   every computer on that local area network.
+3. Determine the broadcast address.
+4. Send an http request, with the set of data, to the broadcast address. This will then forward the data to   every computer on that local area network.
 
 ### b. A client that searches for the server and displays in a terminal the data received.
 #### Process Breakdown
