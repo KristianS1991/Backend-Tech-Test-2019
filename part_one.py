@@ -15,12 +15,15 @@ def define_database(*db_args, **db_kwargs):
     db.generate_mapping(create_tables=True)
     return db
 
+user_data = [dict(username="Josh01", email="josh@gmail.com", password="pass", age=25, location='London'),
+        dict(username="Sarah02", email="sarah@gmail.com", password="pass", age=34, location='New York'),
+        dict(username="Harris03", email="harris@gmail.com", password="pass", age=45, location='Toronto')]
+
 @db_session
-def create_entities(database):
-    database.User(username="Josh01", email="josh@gmail.com", password="pass", age=25, location='London')
-    database.User(username="Sarah02", email="sarah@gmail.com", password="pass", age=34, location='New York')
-    database.User(username="Harris03", email="harris@gmail.com", password="pass", age=45, location='Toronto')
+def create_entities(database, data):
+    for el in data:
+        database.User(**el)
 
 # ex. uncomment the below and run `python part_one.py` in the terminal
 trial_db = define_database('postgres', 'postgres://localhost:5432/user-database')
-create_entities(trial_db)
+create_entities(trial_db, user_data)
