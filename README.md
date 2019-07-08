@@ -57,7 +57,7 @@ At first, I tried using the `testing.postgresql` package to set up the unit test
 #### Part Two
 ![Part Two](https://i.imgur.com/RHZaMD1.png)
 
-#### Success!
+#### Tested in Command Line
 ![Part Two in Terminal](https://i.imgur.com/LQJkuex.png)
 
 ## Part Three
