@@ -1,4 +1,4 @@
-# Backend Technical Test, July 2019
+# Backend Technical Test - July 2019
 
 ## Technologies Used
 * Python
