@@ -2,7 +2,7 @@
 
 ## Technologies Used
 * Python
-* SQLite
+* PostgresQL
 * PonyORM
 * unittest
 * PIP
