@@ -6,7 +6,6 @@
 * PonyORM
 * unittest
 * PIP
-* GitHub
 
 ## Installation
 1. Clone or download the repository.
